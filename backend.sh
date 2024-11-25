@@ -47,7 +47,7 @@ VALIDATE $? "Installing NodeJS"
 #
 
 id expense
-if [ $? -ne 0]
+if [ $? -ne 0 ]
 then 
     useradd expense &>>LOGFILE
     VALIDATE $? "Created expense User"
