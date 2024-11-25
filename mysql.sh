@@ -20,7 +20,7 @@ VALIDATE(){
     fi
 }
 
-if [ $USERID -ne 0]
+if [ $USERID -ne 0 ]
 then 
     echo "You must be root user"
     exit 5
