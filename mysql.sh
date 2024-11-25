@@ -2,7 +2,7 @@ USERID=$(id -u)
 
 TIMESTAMP=$(date +%F-%H-%M-%S)
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
-LOGFILE=$SCRIPT_NAME-$TIMESTAMP.log
+LOGFILE=/tmp/$SCRIPT_NAME-$TIMESTAMP.log
 
 echo "Script started executing at: $TIMESTAMP"
 R="\e[31m"
@@ -39,3 +39,5 @@ VALIDATE $? "started mysqld"
 
 mysql_secure_installation --set-root-pass ExpenseApp@1 &>>LOGFILE
 VALIDATE $? "Setting Up root password"
+
+
