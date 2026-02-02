@@ -38,6 +38,7 @@ do
         RECORD_NAME=$name.$DOMAIN_NAME
 
         echo "Creating Route53 Record for $instance with IP $IP"
+    fi
 
     # UPSERT:: If record available just update, if not available just create it
     aws route53 change-resource-record-sets \
@@ -63,5 +64,4 @@ do
     }
     '
     echo "Record updated for $instance with IP $IP"
-    
 done
