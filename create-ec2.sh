@@ -15,12 +15,12 @@ do
     --image-id $AMI_ID \
     --instance-type t3.micro \
     --security-group-ids $SG_ID \
-    --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=$name}]' \
+    --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=$name}]" \
     --query 'Instances[0].InstanceId' \
     --output text 
     )
 
-    if [ name == frontend ]; then
+    if [ $name == frontend ]; then
     IP=$(
         aws ec2 describe-instances \
             --instance-ids $INSTANCE_ID \
