@@ -88,7 +88,7 @@ else
     dnf install mysql -y &>>$LOGS_FILE
     VALIDATE $? "Installing mysql"
 
-    mysql -h $MYSQL_HOST -uroot -p{$PASSWORD} < /app/schema/backend.sql &>>$LOGS_FILE
+    mysql -h $MYSQL_HOST -uroot -p${PASSWORD} < /app/schema/backend.sql &>>$LOGS_FILE
     VALIDATE $? "Loading backend schema"
 fi
 
