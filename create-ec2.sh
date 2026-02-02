@@ -37,7 +37,7 @@ do
         )
         RECORD_NAME=$name.$DOMAIN_NAME
 
-        echo "Creating Route53 Record for $instance with IP $IP"
+        echo "Creating Route53 Record for $name with IP $IP"
     fi
 
     # UPSERT:: If record available just update, if not available just create it
