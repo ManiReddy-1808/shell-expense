@@ -11,6 +11,7 @@ for name in ${instance[@]}
 do
     # Creating instance for given component
     INSTANCE_ID=$(
+    echo "Creating Instance for $name"
     aws ec2 run-instances \
     --image-id $AMI_ID \
     --instance-type t3.micro \
